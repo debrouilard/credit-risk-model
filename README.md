@@ -1,6 +1,6 @@
-# credit-risk-modelThis project involves building an end-to-end Credit Scoring Model for Bati Bank in partnership with an eCommerce platform. The goal is to enable a "Buy-Now-Pay-Later" service by predicting credit risk using behavioral transaction data.
+# This project involves building an end-to-end Credit Scoring Model for Bati Bank in partnership with an eCommerce platform. The goal is to enable a "Buy-Now-Pay-Later" service by predicting credit risk using behavioral transaction data.
 
-## 📌 Project Overview
+#📌 Project Overview
 As an Analytics Engineer at Bati Bank, I am tasked with developing a system that:
 1. Defines a **proxy variable** for credit risk using RFM (Recency, Frequency, Monetary) analysis.
 2. Develops a model to assign **risk probabilities** and **credit scores**.
