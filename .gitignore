@@ -1,0 +1,41 @@
+# Data and Storage pipelines
+data/
+*.csv
+*.xlsx
+*.parquet
+
+# Local Tracking & MLOps Environment
+mlruns/
+outputs/
+.ipynb_checkpoints/
+*.log
+
+# Python Environment Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.eggy/
+develop-eggs/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+.modules
+
+# IDE and Environment Variables
+.env
+.venv
+venv/
+ENV/
+env/
+.vscode/
+.idea/

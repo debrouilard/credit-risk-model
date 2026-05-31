@@ -1,0 +1,38 @@
+name: Continuous Integration Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  quality-assurance:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out Repository Code
+      uses: actions/checkout@v3
+
+    - name: Set up Python Environment
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        cache: 'pip'
+
+    - name: Install Project Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Code Linter (Flake8 Verification)
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. Two-line max length constraint check.
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+    - name: Execute Automated Unit Tests (Pytest Suite)
+      run: |
+        export PYTHONPATH=$PYTHONPATH:$(pwd)
+        pytest
