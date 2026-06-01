@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  credit-risk-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bati_bank_inference_container
+    ports:
+      - "8000:8000"
+    environment:
+      - ENV=production
+      - PYTHONARRAYPATH=/app
+    restart: always
